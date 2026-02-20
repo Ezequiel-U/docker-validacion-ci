@@ -1,9 +1,5 @@
-FROM node:18-alpine
+FROM nginx:alpine
 
-WORKDIR /app
+COPY index.html /usr/share/nginx/html/index.html
 
-COPY . .
-
-RUN echo "Configuracion de compilacion valida"
-
-CMD ["node", "-e", "console.log('Contenedor ejecutado correctamente')"]
+EXPOSE 80
